@@ -1,0 +1,21 @@
+{
+  "name": "f1-weekend",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@12.4.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.5",
+    "tailwindcss": "4.3.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.1"
+  }
+}

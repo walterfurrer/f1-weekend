@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  --color-canvas: #0a0b0d;
+  --color-panel: #111318;
+  --color-panel-raised: #171a20;
+  --color-line: #272b33;
+  --color-ink: #f4f5f7;
+  --color-muted: #9ca3af;
+  --color-accent: #ff654a;
+  --color-accent-soft: #2a1715;
+  --color-started: #58d6b3;
+  --color-started-soft: #10231f;
+}
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-canvas);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -20%, rgb(255 101 74 / 0.1), transparent 36rem),
+    var(--color-canvas);
+  color: var(--color-ink);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.loading-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-sheen::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.045), transparent);
+  transform: translateX(-100%);
+  animation: sheen 1.6s infinite;
+}
+
+@keyframes sheen {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .loading-sheen::after {
+    animation: none;
+  }
+}
